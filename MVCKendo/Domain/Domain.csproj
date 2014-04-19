@@ -49,10 +49,13 @@
   <ItemGroup>
     <Compile Include="Context\PersonContext.cs" />
     <Compile Include="DAL\PersonDAL.cs" />
+    <Compile Include="DAL\PetsDal.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Persons.cs" />
+    <Compile Include="Models\Pet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PersonVM.cs" />
+    <Compile Include="ViewModels\PetVW.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

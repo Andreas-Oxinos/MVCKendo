@@ -1,4 +1,5 @@
-﻿using Kendo.Mvc.UI;
+﻿using System.Net;
+using Kendo.Mvc.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,32 @@ namespace MVCKendo.Controllers
 {
     public class PersonsController : Controller
     {
+
+        [HttpPost]
+        public ActionResult DetailTable_Data(int id, [DataSourceRequest] DataSourceRequest request)
+        {
+            using (var dal = new PetsDal())
+            {
+                var data = dal.Get(id);
+                var result = data.ToDataSourceResult(request);
+                return Json(result);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult DetailTable_Create([DataSourceRequest] DataSourceRequest request, PetVW pet, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                pet.PersonId = id;
+                using (var dal = new PetsDal())
+                {
+                    dal.Create(pet);
+                }
+            }
+            return Json(new[] { pet }.ToDataSourceResult(request, ModelState));
+        }
+
         public ActionResult Get_Data([DataSourceRequest]DataSourceRequest request)
         {
             using (var dal = new PersonDAL())
@@ -37,6 +64,7 @@ namespace MVCKendo.Controllers
             return Json(new[] { person }.ToDataSourceResult(request, ModelState));
         }
 
+        [HttpPost]
         public ActionResult Person_Update([DataSourceRequest]DataSourceRequest request, PersonVM person)
         {
             if(ModelState.IsValid)
@@ -49,10 +77,10 @@ namespace MVCKendo.Controllers
             return Json(new[] { person }.ToDataSourceResult(request, ModelState));
         }
 
-
+        [HttpPost]
         public ActionResult Person_Delete([DataSourceRequest]DataSourceRequest request, PersonVM person)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 using(var dal = new PersonDAL())
                 {
@@ -61,5 +89,7 @@ namespace MVCKendo.Controllers
             }
             return Json(new[] { person }.ToDataSourceResult(request, ModelState));
         }
+
+       
     }
 }

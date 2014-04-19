@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "title";
+}
+
+
+
+<div class="container-fluid">
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>Kendo UI MVC Grid<small>  ajax enabled!!</small></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            @(Html.Kendo().Grid<Domain.ViewModels.PersonVM>()
+                  .Name("Grid")
+                  .DataSource(d => d
+                      .Ajax()
+                      .Model(model =>
+                      {
+                          model.Id(p => p.PersonId);
+                          model.Field(p => p.PersonId).Editable(false);
+                      })
+                      .Create(c => c.Action("Person_Create", "Persons"))
+                      .ServerOperation(false)
+                      .Read(r => r.Action("Get_Data", "Persons"))
+                      .Update(u => u.Action("Person_Update", "Persons"))
+                      .Destroy(destroy => destroy.Action("Person_Delete", "Persons"))
+                  )
+                  .Columns(columns =>
+                  {
+                      columns.Bound(p => p.PersonId).Visible(false);
+                      columns.Bound(p => p.Name);
+                      columns.Bound(p => p.Surname);
+                      columns.Command(commands =>
+                      {
+                          commands.Edit();
+                          commands.Destroy();
+                      }).Title("Commands").Width(200);
+                  })
+                  .ToolBar(toolbar => toolbar.Create())
+                  .Editable(editable => editable.Mode(GridEditMode.PopUp))
+                  .Pageable()
+                  .Sortable()
+
+                  )
+        </div>
+    </div>
+</div>

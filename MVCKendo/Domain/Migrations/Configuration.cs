@@ -1,3 +1,5 @@
+using System.Collections.ObjectModel;
+
 namespace Domain.Migrations
 {
     using Domain.Models;
@@ -15,22 +17,14 @@ namespace Domain.Migrations
 
         protected override void Seed(Domain.Context.PersonContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
-
             context.Persons.AddOrUpdate(
                 p => p.Id,
-                    new Person { Name = "Andreas", Surname = "Oxinos" },
+                    new Person { Name = "Andreas", Surname = "Oxinos", pet = new Collection<Pet>
+                    {
+                         new Pet { Age = 1, Name = "Lufy"},
+                         new Pet { Age = 1, Name = "Sandy"}
+
+                    }},
                     new Person { Name = "Vaso", Surname = "Alexogrlou" }
             );
         }

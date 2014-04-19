@@ -8,3 +8,13 @@ C:\Users\andreas\Documents\Visual Studio 2013\Projects\MVCKendo\Domain\bin\Debug
 C:\Users\andreas\Documents\Visual Studio 2013\Projects\MVCKendo\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\Users\andreas\Documents\Visual Studio 2013\Projects\MVCKendo\Domain\obj\Debug\Domain.dll
 C:\Users\andreas\Documents\Visual Studio 2013\Projects\MVCKendo\Domain\obj\Debug\Domain.pdb
+C:\Users\Andreas\Source\Repos\MVCKendo\MVCKendo\Domain\bin\Debug\Domain.dll.config
+C:\Users\Andreas\Source\Repos\MVCKendo\MVCKendo\Domain\bin\Debug\Domain.dll
+C:\Users\Andreas\Source\Repos\MVCKendo\MVCKendo\Domain\bin\Debug\Domain.pdb
+C:\Users\Andreas\Source\Repos\MVCKendo\MVCKendo\Domain\bin\Debug\EntityFramework.dll
+C:\Users\Andreas\Source\Repos\MVCKendo\MVCKendo\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Andreas\Source\Repos\MVCKendo\MVCKendo\Domain\bin\Debug\EntityFramework.xml
+C:\Users\Andreas\Source\Repos\MVCKendo\MVCKendo\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Andreas\Source\Repos\MVCKendo\MVCKendo\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\Andreas\Source\Repos\MVCKendo\MVCKendo\Domain\obj\Debug\Domain.dll
+C:\Users\Andreas\Source\Repos\MVCKendo\MVCKendo\Domain\obj\Debug\Domain.pdb

@@ -15,5 +15,6 @@ namespace Domain.Context
 
         }
         public DbSet<Person> Persons { get; set; }
+        public DbSet<Pet> Pets { get; set; } 
     }
 }

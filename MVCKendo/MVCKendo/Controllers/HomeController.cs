@@ -14,7 +14,15 @@ namespace MVCKendo.Controllers
         }
 
 
-        
+        public ActionResult Grid()
+        {
+            return View();
+        }
+
+        public ActionResult GridDetail()
+        {
+            return View();
+        }
 
     }
 }

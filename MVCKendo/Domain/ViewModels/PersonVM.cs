@@ -12,8 +12,12 @@ namespace Domain.ViewModels
     public class PersonVM
     {
         [HiddenInput(DisplayValue= false)]
-        public int Id { get; set; }
+        public int PersonId { get; set; }
+
+        [Required]
         public string Name { get; set; }
+        
+        [Required]
         public string Surname { get; set; }
     }
 }

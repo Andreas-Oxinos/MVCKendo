@@ -30,8 +30,9 @@ namespace MVCKendo
             "~/Scripts/kendo/kendo.aspnetmvc.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/kendo/css").Include(
-            "~/Content/kendo/kendo.common-bootstrap.min.css",
-            "~/Content/kendo/kendo.metro.min.css"));
+                "~/Content/kendo/kendo.common-bootstrap.min.css",
+                "~/Content/kendo/kendo.flat.min.css"));
+                
 
             bundles.IgnoreList.Clear();
         }

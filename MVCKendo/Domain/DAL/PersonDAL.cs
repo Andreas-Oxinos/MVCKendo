@@ -19,7 +19,7 @@ namespace Domain.DAL
                 myData =  (from r in context.Persons
                           select new PersonVM
                           {
-                              Id = r.Id,
+                              PersonId = r.Id,
                               Name = r.Name,
                               Surname = r.Surname
                           }).ToList();
@@ -41,7 +41,7 @@ namespace Domain.DAL
         {
             using (var context = new PersonContext())
             {
-                var model = context.Persons.Where(x => x.Id == person.Id).FirstOrDefault();
+                var model = context.Persons.FirstOrDefault(x => x.Id == person.PersonId);
                 model.Name = person.Name;
                 model.Surname = person.Surname;
                 context.SaveChanges();
@@ -52,7 +52,7 @@ namespace Domain.DAL
         {
             using(var context = new PersonContext())
             {
-                context.Persons.Remove(context.Persons.FirstOrDefault(x => x.Id == person.Id));
+                context.Persons.Remove(context.Persons.FirstOrDefault(x => x.Id == person.PersonId));
                 context.SaveChanges();
             }
         }
