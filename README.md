@@ -1,4 +1,6 @@
 MVCKendo
 ========
 
-An asp mvc 5 project for varius testing with Kendo framework
+When you open the solution in visual studio open package manager console,
+on the dropdown select the domain project, and use the command
+'update-database'
