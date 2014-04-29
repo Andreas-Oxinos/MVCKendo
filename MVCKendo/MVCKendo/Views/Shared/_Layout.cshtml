@@ -13,18 +13,20 @@
 </head>
 <body>
    
-    <div class="body-content">
-        
-        @Scripts.Render("~/bundles/jquery")
-       
-        
-        @{Html.RenderAction("GetMenuItems", "Menu");}
-        @RenderBody()
+    <div class="container-fluid">
+        <div class="row">
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/kendo")
+            @Scripts.Render("~/bundles/bootstrap")
+
+            @{Html.RenderAction("GetMenuItems", "Menu");}
+            @RenderBody()
+
+
+        </div>
        
     </div>
 
-    @Scripts.Render("~/bundles/kendo")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
