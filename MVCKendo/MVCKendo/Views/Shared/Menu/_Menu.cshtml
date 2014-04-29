@@ -1,0 +1,50 @@
+﻿@model List<Domain.ViewModels.MenuVM>
+
+@{
+   
+    var menuModel = Model;
+}
+
+
+<ul id="menu">
+    <li>
+        @{
+            foreach (var item in menuModel)
+            {
+                if (@item.Subs == null)
+                {
+                <li>
+                    <a href="@Url.Action(@item.Action,@item.Controller)">@item.DisplayValue</a>
+                </li>
+                }
+                else
+                {
+
+                    <li>
+                        @item.DisplayValue
+                        <ul>
+                            @foreach (var subItem in item.Subs)
+                            {
+                                <li>
+                                    <a href="@Url.Action(@subItem.Action, @subItem.Controller)">@subItem.DisplayValue</a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+
+            }
+        }
+        </li>
+
+    </ul>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#menu").kendoMenu();
+        });
+    </script>
+
+
